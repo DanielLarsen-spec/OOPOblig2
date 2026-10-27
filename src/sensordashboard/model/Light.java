@@ -8,7 +8,13 @@ public class Light extends Sensor {
         this.brightness = brightness;
     }
 
+    public int getBrightness(){
+        return brightness;
+    }
 
+    public void setBrightness(int brightness){
+        this.brightness = brightness;
+    }
 
 
 
