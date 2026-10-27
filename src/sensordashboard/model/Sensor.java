@@ -5,14 +5,18 @@ import javafx.beans.property.SimpleDoubleProperty;
 
 public abstract class Sensor {
     protected String name;
-    protected boolean status;
     private final DoubleProperty value = new SimpleDoubleProperty();
     
-    public Sensor(String name, boolean status, double value) {
+    public Sensor(String name, double value) {
         this.name = name;
-        this.status = status;
         this.value.set(value);
     }
+
+    public String getName() {
+        return name;
+    }
+
+
 
     
 
