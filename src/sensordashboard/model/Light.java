@@ -1,20 +1,14 @@
 package sensordashboard.model;
 
 public class Light extends Sensor {
-    private int brightness;
+    
 
-    public Light(String name, boolean status, int brightness){
-        super(name, status);
-        this.brightness = brightness;
+    public Light(String name, boolean status, int brightness, double value){
+        super(name, status, value);
+        
     }
 
-    public int getBrightness(){
-        return brightness;
-    }
-
-    public void setBrightness(int brightness){
-        this.brightness = brightness;
-    }
+    
 
 
 
