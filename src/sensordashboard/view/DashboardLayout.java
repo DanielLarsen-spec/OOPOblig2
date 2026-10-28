@@ -13,13 +13,25 @@ import javafx.scene.control.ProgressBar;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import java.util.List;
+
 public class DashboardLayout{
     
+    private final BorderPane root = new BorderPane();
+
+    public DashboardLayout(List<Sensor> sensors) {
+        Label title = new Label("Sensor Monitor Dashboard");
+        root.setTop(title);
+        root.setPadding(new Insets(20));
+
+        
+
+    }
+
+    public borderPane getRoot() {
+        return root;
+    }
 
 
 
-
-
-
-    
 }

@@ -24,6 +24,9 @@ public abstract class Sensor {
         this.value.set(value);
     }
 
+    public DoubleProperty valueProperty(){
+        return value;
+    }
     
 
 
