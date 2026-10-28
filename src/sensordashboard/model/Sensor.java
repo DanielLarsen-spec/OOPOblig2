@@ -16,7 +16,13 @@ public abstract class Sensor {
         return name;
     }
 
+    public double getValue() {
+        return value.get();
+    }
 
+    public void setValue(double value){
+        this.value.set(value);
+    }
 
     
 
