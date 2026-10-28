@@ -9,7 +9,8 @@ import javafx.scene.control.Label;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;     
-import javafx.scene.image.ImageView; 
+import sensordashboard.view.DashboardLayout;
+
 
 
 public class MainApp extends Application {
@@ -24,12 +25,15 @@ public class MainApp extends Application {
             sensors.add(thermostate);
             sensors.add(light);
             sensors.add(humidity);
-        
-            Group root = new Group();
-            Scene scene = new Scene(root, Color.BLACK);  
-            Image icon = new Image("Icon.png");  
-        
+            
+            
+            DashboardLayout layout = new DashboardLayout(sensors);
+            
+            Scene scene = new Scene(layout.getRoot(), 700, 400);
+            
+            Image icon = new Image("Icon.png");   
             stage.getIcons().add(icon);
+            stage.setTitle("Sensor Dashboard");
             stage.setScene(scene);
             stage.show();
         

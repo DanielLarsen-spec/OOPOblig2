@@ -25,19 +25,24 @@ public class DashboardLayout{
         root.setTop(title);
         root.setPadding(new Insets(20));
 
-        
-
+        HBox cards = new HBox(20);
+        for(Sensor sensor : sensors) {
+            VBox card = createCard(sensor);
+            cards.getChildren().add(card);
+        }
+        root.setCenter(cards);
     }
 
-    public borderPane getRoot() {
+    public BorderPane getRoot() {
         return root;
     }
 
     private VBox createCard(Sensor sensor) {
         Label nameLabel = new Label(sensor.getName());
         Label valueLabel = new Label();
-
         ProgressBar bar = new ProgressBar();
+
+        valueLabel.textProperty().bind(sensor.valueProperty().asString("%.0f%%"));
 
         VBox card = new VBox(10, nameLabel, valueLabel, bar);
 
