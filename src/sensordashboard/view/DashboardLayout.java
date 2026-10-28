@@ -3,6 +3,7 @@ package sensordashboard.view;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import sensordashboard.model.Sensor;
 import javafx.scene.layout.GridPane;
 
 //Kontroller
@@ -30,6 +31,18 @@ public class DashboardLayout{
 
     public borderPane getRoot() {
         return root;
+    }
+
+    private VBox createCard(Sensor sensor) {
+        Label nameLabel = new Label(sensor.getName());
+        Label valueLabel = new Label();
+
+        ProgressBar bar = new ProgressBar();
+
+        VBox card = new VBox(10, nameLabel, valueLabel, bar);
+
+        return card;
+
     }
 
 
