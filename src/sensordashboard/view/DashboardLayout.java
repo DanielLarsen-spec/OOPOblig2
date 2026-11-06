@@ -19,11 +19,13 @@ import java.util.List;
 public class DashboardLayout{
     
     private final BorderPane root = new BorderPane();
+    private final Button button = new Button("Update");
 
     public DashboardLayout(List<Sensor> sensors) {
         Label title = new Label("Sensor Monitor Dashboard");
         root.setTop(title);
         root.setPadding(new Insets(20));
+        
 
         HBox cards = new HBox(20);
         for(Sensor sensor : sensors) {
@@ -31,10 +33,16 @@ public class DashboardLayout{
             cards.getChildren().add(card);
         }
         root.setCenter(cards);
+        root.setBottom(button);
+    
     }
 
     public BorderPane getRoot() {
         return root;
+    }
+
+    public Button getupdateButton(){
+        return button;
     }
 
     private VBox createCard(Sensor sensor) {
@@ -42,9 +50,14 @@ public class DashboardLayout{
         Label valueLabel = new Label();
         ProgressBar bar = new ProgressBar();
 
-        valueLabel.textProperty().bind(sensor.valueProperty().asString("%.0f%%"));
+        
 
+        valueLabel.textProperty().bind(sensor.valueProperty().asString("%.0f%%"));
+        valueLabel.textProperty().bind(sensor.valueProperty().asString("%.0f").concat(sensor.getUnit()));
+        bar.progressProperty().bind(sensor.valueProperty().divide(100));
         VBox card = new VBox(10, nameLabel, valueLabel, bar);
+        
+
 
         return card;
 

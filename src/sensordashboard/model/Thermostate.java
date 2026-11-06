@@ -8,6 +8,10 @@ public class Thermostate extends Sensor {
         super(name, value);
         
     }
+    @Override
+    public String getUnit() {
+        return "°C";
+    }
 
 
 

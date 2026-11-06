@@ -8,6 +8,11 @@ public class Humidity extends Sensor {
         
     }
 
+    @Override
+    public String getUnit(){
+        return "%";
+    }
+
     
 
 

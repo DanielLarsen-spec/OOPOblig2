@@ -3,10 +3,7 @@ import java.util.List;
 import java.util.ArrayList;
 import sensordashboard.model.*;
 import javafx.application.Application;
-import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.scene.image.Image;     
 import sensordashboard.view.DashboardLayout;
@@ -31,7 +28,9 @@ public class MainApp extends Application {
             
             Scene scene = new Scene(layout.getRoot(), 700, 400);
             
-            Image icon = new Image("Icon.png");   
+            
+            Image icon = new Image("Icon.png");
+               
             stage.getIcons().add(icon);
             stage.setTitle("Sensor Dashboard");
             stage.setScene(scene);

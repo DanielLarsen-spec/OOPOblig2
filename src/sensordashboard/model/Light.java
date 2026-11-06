@@ -8,6 +8,10 @@ public class Light extends Sensor {
         
     }
 
+    @Override
+    public String getUnit(){
+        return "%";
+    }
     
 
 

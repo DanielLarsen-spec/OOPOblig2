@@ -20,6 +20,10 @@ public abstract class Sensor {
         return value.get();
     }
 
+    public abstract String getUnit();
+    
+
+
     public void setValue(double value){
         this.value.set(value);
     }
