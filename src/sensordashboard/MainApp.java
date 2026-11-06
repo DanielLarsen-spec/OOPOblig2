@@ -1,6 +1,8 @@
 package sensordashboard;
 import java.util.List;
 import java.util.ArrayList;
+
+import sensordashboard.controller.DashboardController;
 import sensordashboard.model.*;
 import javafx.application.Application;
 import javafx.scene.Scene;
@@ -25,6 +27,7 @@ public class MainApp extends Application {
             
             
             DashboardLayout layout = new DashboardLayout(sensors);
+            new DashboardController(sensors, layout);
             
             Scene scene = new Scene(layout.getRoot(), 700, 400);
             

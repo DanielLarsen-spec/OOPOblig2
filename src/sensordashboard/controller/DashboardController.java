@@ -11,7 +11,7 @@ public class DashboardController {
     public DashboardController(List<Sensor> sensors, DashboardLayout layout) {
         this.sensors = sensors;
 
-        layout.getupdateButton().setOnAction(e -> updateSensors());
+        layout.getUpdateButton().setOnAction(e -> updateSensors());
     }
 
     private void updateSensors(){
