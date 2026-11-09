@@ -87,7 +87,7 @@ public class DashboardLayout{
             }
         });
        
-        VBox card = new VBox(10, nameLabel, valueLabel, bar);
+        VBox card = new VBox(10, nameLabel, valueLabel, bar, trendLabel);
 
         BooleanBinding overThreshould = sensor.valueProperty().greaterThan(slider.valueProperty());
         
