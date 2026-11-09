@@ -11,6 +11,7 @@ import javafx.scene.control.ProgressBar;
 import javafx.beans.property.SimpleBooleanProperty;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.property.BooleanProperty;
+import javafx.beans.property.*;
 import javafx.beans.binding.BooleanBinding;
 import javafx.beans.binding.Bindings;
 import javafx.geometry.Insets;
@@ -76,7 +77,7 @@ public class DashboardLayout{
         valueLabel.textProperty().bind(sensor.valueProperty().asString("%.0f").concat(sensor.getUnit()));
         bar.progressProperty().bind(sensor.valueProperty().divide(100));
 
-        trendLabel.valueProperty().addListener((obs, oldValue, newValue) -> {
+        sensor.valueProperty().addListener((obs, oldValue, newValue) -> {
             if(newValue.doubleValue() > oldValue.doubleValue()) {
                 trendLabel.setText("▲");
             } else if(newValue.doubleValue() < oldValue.doubleValue()) {
